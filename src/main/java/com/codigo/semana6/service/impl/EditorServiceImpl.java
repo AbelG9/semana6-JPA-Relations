@@ -31,7 +31,7 @@ public class EditorServiceImpl implements EditorService {
 
     @Override
     public EditorEntity crearEditor(EditorEntity editorEntity) {
-        return null;
+        return editorDAO.save(editorEntity);
     }
 
     @Override
