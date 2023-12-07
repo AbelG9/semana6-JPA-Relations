@@ -11,7 +11,9 @@ public interface AutorService {
 
     AutorEntity crearAutor(AutorEntity autor);
 
-    AutorEntity actualizarAutor(Long id, AutorEntity autorEntity);
+    AutorEntity actualizarAutor(Long id, AutorEntity autorEntity) throws Exception;
 
-    void eliminarAutor(Long id);
+    boolean eliminarAutor(Long id) throws Exception;
+
+    AutorEntity eliminarLogicamenteAutor(Long id) throws Exception;
 }

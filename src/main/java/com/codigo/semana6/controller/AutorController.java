@@ -33,4 +33,22 @@ public class AutorController {
         AutorEntity autor = autorService.crearAutor(autorEntity);
         return new ResponseEntity<>(autor, HttpStatus.CREATED);
     }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<AutorEntity> actualizarAutor(@PathVariable Long id, @RequestBody AutorEntity autorEntity) throws Exception {
+        AutorEntity autor = autorService.actualizarAutor(id, autorEntity);
+        return ResponseEntity.ok(autor);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<AutorEntity> eliminarAutor(@PathVariable Long id) throws Exception {
+        autorService.eliminarAutor(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PutMapping("/delete/{id}")
+    public ResponseEntity<AutorEntity> eliminarLogicamenteAutor(@PathVariable Long id) throws Exception {
+        AutorEntity autor = autorService.eliminarLogicamenteAutor(id);
+        return ResponseEntity.ok(autor);
+    }
 }
